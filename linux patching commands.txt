@@ -1,0 +1,91 @@
+ps aux|grep -i java |awk '{print $2}'| awk -F',' '{ system("pwdx "$1)}' >> /home/dhandapani/running03Nov.txt
+/command/svstat /service/*
+systemctl status tomcat
+export http_proxy="http://172.16.1.23:3128";export https_proxy="http://172.16.1.23:3128";
+yum update -y
+reboot
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+[11:02 am, 01/07/2023] Gowthami Gaddam: export http_proxy="http://172.16.1.23:3128";export https_proxy="http://172.16.1.23:3128";
+systemctl stop tomcat
+systemctl status tomcat
+cd /etc/systemd/system/
+mv tomcat.service /home/dhandapani/
+systemctl daemon-reload
+export http_proxy="http://172.16.1.23:3128";export https_proxy="http://172.16.1.23:3128";
+amazon-linux-extras list
+amazon-linux-extras install tomcat9
+systemctl status tomcat
+systemctl start tomcat
+systemctl enable tomcat
+ps -ef | grep tomcat
+tomcat version
+cd /opt/
+ll
+rm tomcat
+ln -s /usr/share/tomcat /opt/tomcat
+ll
+cd /usr/share/tomcat
+ll
+cd /opt/tomcat-9.0.44
+cp -r webapps /var/lib/tomcat/
+ll
+pwd
+ll
+cd /usr/share/tomcat
+ll
+cd /opt/
+ll
+cd tomcat-9.0.44/
+ll
+cd /var/lib/tomcat/webapps
+ll
+cd ..
+ll
+cd ..
+ll
+cd /usr/share/tomcat/
+ll
+chown -R tom…
+[11:02 am, 01/07/2023] Gowthami Gaddam: cd /opt/tomcat/logs/   -----tomcat
+cd  /ubona/bin/prodamin/-----asterisk
+ls | grep asterisk
+crontab -l | grep asterisk
+cd /var/log/asterisk/ ---need to check rotating or not 
+ll
+aws s3 ls s3://ubona.jarvis/ubona/asterisk/ --profile S3User
+cd /ubona/bin/prodamin/
+ls | grep asterisk
+[11:02 am, 01/07/2023] Gowthami Gaddam: ##############################Application logs Archival####################################################
+#Zipping all appication logs reantion 7 days .. Arvind[12-02-2021]
+00 01 * * * /ubona/bin/prodadmin/logszip7days.sh > /tmp/logszip7days_$(date +\%Y_\%m_\%d).out 2>&1
+#Zipping All apllication out_logs retension 4 days .. Arvind[12-02-2021]
+# Uploading all out_logs to S3 bucket on s3://ubona-jarvis
+55 22 * * * /ubona/bin/prodadmin/logszip7days_toS3.sh > /tmp/logszip7days_toS3.sh$(date +\%Y_\%m_\%d).out 2>&1
+55 22 * * * /ubona/bin/prodadmin/logszipasterisk.sh > /tmp/logszipasterisk.sh$(date +\%Y_\%m_\%d).out 2>&1
+
+##############################system logs Archival#########################################################
+
+########Moving 3 days prior system logs to s3://ubona-jarvis
+00 04 * * * /ubona/bin/prodadmin/system_log_zipper.sh > /ubona/bin/prodadmin/system_log_zipper.txt 2>&1
+
+
+##############################Recordings Archival##########################################################
+########Copy 1 day data to falcon
+05 00  * * * /ubona/bin/prodadmin/Backup_Server.sh > /ubona/bin/prodadmin/Backup_Server.txt 2>&1
+
+
+aws s3 ls  s3:ubona-jarvis/logs --profile S3User
+tomcat 
+access logs stored in logs 
+======log rotation========
+jarvis
+root@ubona-jarvis:~]
+root@ubona-jarvis:~] cd /tmp
+root@ubona-jarvis:/tmp]
+root@ubona-jarvis:/tmp] ls -l logszip7days*
+
+=====S3 bucket moving=====
+root@ubona-jarvis:/tmp] aws s3 ls --prifile S3User------------list of buckets 
+aws s3 ls --profile S3User | grep ubona-jarvis----check for particular path
+root@ubona-jarvis:/tmp] aws s3 ls s3://ubona-jarvis --profile S3User----go to particular path
+root@ubona-jarvis:/tmp] aws s3 ls s3://ubona-jarvis/logs/ --profile S3User----go to log path
